@@ -10,6 +10,7 @@
     <h2>Number#<%= episode.number %></h2>
     <h3><%= episode.title %></h3>
     <h6><%= episode.description %></h6>
+    <audio controls><source src="<%= episode.url %>" type="audio/mpeg"></audio>
   <% end %>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
