@@ -5,8 +5,13 @@ class FeedParser
 
   def self.parse(feed)
     doc = Nokogiri::HTML(URI.open(feed.url))
-    doc.xpath("//item").each do |item|
-      puts item
+    items = doc.xpath("//item")
+    items.each do |item|
+      episode = Episode.new
+      episode.title = item.xpath("//title")
+      episode.description = item.xpath("//description")
+      puts episode.inspect
     end
+
   end
 end

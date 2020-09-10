@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_10_081147) do
+ActiveRecord::Schema.define(version: 2020_09_10_085448) do
+
+  create_table "episodes", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "number"
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "feeds", force: :cascade do |t|
     t.string "url"
