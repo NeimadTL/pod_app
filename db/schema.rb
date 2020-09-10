@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_10_085448) do
+ActiveRecord::Schema.define(version: 2020_09_10_093715) do
 
   create_table "episodes", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_09_10_085448) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "feed_id", null: false
+    t.index ["feed_id"], name: "index_episodes_on_feed_id"
   end
 
   create_table "feeds", force: :cascade do |t|

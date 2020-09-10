@@ -10,7 +10,6 @@ class FeedsController < ApplicationController
   # GET /feeds/1
   # GET /feeds/1.json
   def show
-    FeedParser.parse(@feed)
   end
 
   # GET /feeds/new
@@ -29,7 +28,7 @@ class FeedsController < ApplicationController
 
     respond_to do |format|
       if @feed.save
-        # FeedParser.parse(@feed)
+        FeedParser.parse(@feed)
         format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
         format.json { render :show, status: :created, location: @feed }
       else
