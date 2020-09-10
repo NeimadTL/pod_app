@@ -5,5 +5,11 @@
   <%= @feed.url %>
 </p>
 
+<strong>Episodes:</strong>
+  <% @feed.episodes.each do |episode| %>
+    <h3><%= episode.title %></h3>
+    <h6><%= episode.description %></h6>
+  <% end %>
+
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>
