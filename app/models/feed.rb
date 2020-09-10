@@ -7,7 +7,8 @@ class Feed < ApplicationRecord
   def add_episode(episodes)
     episodes.each do |episode|
       self.episodes.build(title: episode.xpath(".//title").text,
-                          description: episode.xpath(".//description").text)
+                          description: episode.xpath(".//description").text,
+                          number: episode.xpath("episode").text)
     end
   end
 
